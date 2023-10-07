@@ -1,5 +1,5 @@
 import React from "react";
-import { usePageContext } from "./PageContext";
+import { usePageContext } from "../context/PageContext";
 
 export default function AnimalModifier() {
   const { animal, setCurrentPage } = usePageContext();

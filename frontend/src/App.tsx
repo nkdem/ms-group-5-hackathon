@@ -1,11 +1,12 @@
 import { useMemo } from "react";
-import AnimalModifier from "./AnimalModifier";
-import CharacterSelection from "./CharacterSelection";
-import HomePage from "./HomePage";
-import { PageContextProvider, usePageContext } from "./PageContext";
-import StorySelector from "./StorySelector";
+import AnimalModifier from "./pages/AnimalModifier";
+import CharacterSelection from "./pages/CharacterSelection";
+import HomePage from "./pages/HomePage";
+import { PageContextProvider, usePageContext } from "./context/PageContext";
+import StorySelector from "./pages/StorySelector";
+import Book from "./pages/Book";
 
-function App() {
+export function App() {
   return (
     <PageContextProvider>
       <AppContent />
@@ -26,6 +27,8 @@ function AppContent() {
         return <AnimalModifier />;
       case "storySelector":
         return <StorySelector />;
+      case "book":
+        return <Book />;
       default:
         return <p>Null</p>;
     }
@@ -42,5 +45,3 @@ function AppContent() {
     </>
   );
 }
-
-export default App;

@@ -1,13 +1,15 @@
 import React from "react";
+import { usePageContext } from "../context/PageContext";
 
 export default function StorySelector() {
   const stories = [0, 1, 2];
+  const { setCurrentPage } = usePageContext();
 
   function goToStory(selected: number | undefined) {
     const story = selected
       ? selected
       : Math.floor(Math.random() * stories.length);
-    console.log(story);
+    setCurrentPage("book");
   }
 
   return (

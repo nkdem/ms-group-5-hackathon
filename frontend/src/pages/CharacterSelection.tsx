@@ -1,6 +1,6 @@
-import { usePageContext } from "./PageContext";
+import { usePageContext } from "../context/PageContext";
 
-import Animal from "./models/Animal";
+import Animal from "../models/Animal";
 
 const Coo = new Animal("Coo", "some_url", "some_url", "no_colour");
 const Nessie = new Animal("Nessie", "some_url", "some_url", "no_colour");
