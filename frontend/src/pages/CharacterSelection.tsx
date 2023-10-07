@@ -1,10 +1,26 @@
 import { usePageContext } from "../context/PageContext";
-
 import Animal from "../models/Animal";
 
-const Coo = new Animal("Coo", "some_url", "some_url", "no_colour");
-const Nessie = new Animal("Nessie", "some_url", "some_url", "no_colour");
-const Unicorn = new Animal("Unicorn", "some_url", "some_url", "no_colour");
+const Coo: Animal = {
+  name: "Coo",
+  color: "no_colour",
+  hatUrl: "some_url",
+  soundUrl: "some_url",
+}
+
+const Nessie: Animal = {
+  name: "Nessie",
+  color: "no_colour",
+  hatUrl: "some_url",
+  soundUrl: "some_url",
+}
+
+const Unicorn: Animal = {
+  name: "Unicorn",
+  color: "no_colour",
+  hatUrl: "some_url",
+  soundUrl: "some_url",
+}
 
 export default function CharacterSelection() {
   const animals = [Coo, Nessie, Unicorn];
