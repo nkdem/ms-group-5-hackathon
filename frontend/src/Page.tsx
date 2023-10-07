@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useBook } from "./context/BookContext";
 
 export default function Page({
@@ -39,6 +39,7 @@ export default function Page({
         onClick={handleClick}
         ref={backRef}
         animate={flipped ? "flipped" : "not_flipped"}
+        initial={false} // Prevent animation on load
         transition={{
           bounce: 0,
           duration: 0.8,
@@ -68,6 +69,7 @@ export default function Page({
         onClick={handleClick}
         ref={frontRef}
         animate={flipped ? "flipped" : "not_flipped"}
+        initial={false} // Prevent animation on load
         transition={{
           bounce: 0,
           duration: 0.8,

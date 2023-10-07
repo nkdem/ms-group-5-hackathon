@@ -6,21 +6,21 @@ const Coo: Animal = {
   color: "no_colour",
   hatUrl: "some_url",
   soundUrl: "some_url",
-}
+};
 
 const Nessie: Animal = {
   name: "Nessie",
   color: "no_colour",
   hatUrl: "some_url",
   soundUrl: "some_url",
-}
+};
 
 const Unicorn: Animal = {
   name: "Unicorn",
   color: "no_colour",
   hatUrl: "some_url",
   soundUrl: "some_url",
-}
+};
 
 export default function CharacterSelection() {
   const animals = [Coo, Nessie, Unicorn];

@@ -11,7 +11,7 @@ export default function HomePage() {
         <h1 className="flex justify-center text-6xl">Name TBD</h1>
 
         <button
-          className="mx-auto rounded-xl border border-[#e8e2c8] bg-white px-24 py-24 shadow-2xl"
+          className="mx-auto rounded-xl border border-[#e8e2c8] bg-white px-24 py-24 shadow-2xl shadow-primary-300"
           onClick={() => setCurrentPage("characterSelection")}
         >
           CLICK ME
