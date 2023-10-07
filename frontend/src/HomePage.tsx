@@ -7,7 +7,7 @@ export default function HomePage() {
     <div>
       {/* <img src='/chas-logo.png' className='bg-red-400' /> */}
       {/* make img appear in a rounded box with the img in center of the div  */}
-      <div className="flex h-full flex-col justify-around">
+      <div className="flex flex-col justify-around">
         <h1 className="flex justify-center text-6xl">Name TBD</h1>
 
         <button

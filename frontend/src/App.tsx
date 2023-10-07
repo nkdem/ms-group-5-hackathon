@@ -3,13 +3,12 @@ import AnimalModifier from "./AnimalModifier";
 import CharacterSelection from "./CharacterSelection";
 import HomePage from "./HomePage";
 import { PageContextProvider, usePageContext } from "./PageContext";
+import StorySelector from "./StorySelector";
 
 function App() {
   return (
     <PageContextProvider>
-      <div className="h-full">
-        <AppContent />
-      </div>
+      <AppContent />
     </PageContextProvider>
   );
 }
@@ -25,6 +24,8 @@ function AppContent() {
         return <CharacterSelection />;
       case "animalModifier":
         return <AnimalModifier />;
+      case "storySelector":
+        return <StorySelector />;
       default:
         return <p>Null</p>;
     }

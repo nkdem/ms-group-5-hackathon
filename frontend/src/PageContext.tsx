@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { createContext, useContext } from "react";
+import Animal from "./models/Animal";
 
-type Page = "home" | "characterSelection" | "animalModifier";
+type Page = "home" | "characterSelection" | "animalModifier" | "storySelector";
 type PageContextProps = {
   currentPage: Page;
   setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;
