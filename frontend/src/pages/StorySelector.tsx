@@ -29,7 +29,7 @@ export default function StorySelector() {
       <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8">
         {stories.map((story) => (
           <button
-            className="h-64 w-64 rounded-lg bg-blue-400"
+            className="h-64 w-64 rounded-lg bg-accent4-300"
             onClick={() => goToStory(story)}
           >
             Story {story}

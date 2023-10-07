@@ -9,15 +9,14 @@ export default function HomePage() {
       <h1 className="flex justify-center text-6xl">Name TBD</h1>
 
       <button
-        className="mx-auto flex-1 rounded-xl border border-[#e8e2c8] bg-white px-24 py-24 shadow-2xl shadow-primary-300"
+        className="mx-auto my-8 flex-1 rounded-xl border border-secondary-400 bg-secondary-200 px-24 py-24 shadow-2xl shadow-secondary-400"
         onClick={() => setCurrentPage("characterSelection")}
       >
         CLICK ME
       </button>
 
-      <Marquee className="mx-auto bg-red-400" direction="right">
+      <Marquee className="mx-auto" direction="right">
         <h1>Animal 1</h1>
-        <h1>Animal 2</h1>
         <h1>Animal 3</h1>
       </Marquee>
     </div>

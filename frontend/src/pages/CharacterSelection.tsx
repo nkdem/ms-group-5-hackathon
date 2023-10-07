@@ -33,7 +33,7 @@ export default function CharacterSelection() {
         {animals.map((animal) => (
           <button
             key={animal.name}
-            className="flex h-48 w-3/12 flex-row rounded-lg bg-slate-200"
+            className="flex h-48 w-3/12 flex-row rounded-lg bg-primary-100"
             onClick={() => {
               setAnimal(animal);
               setCurrentPage("animalModifier");
