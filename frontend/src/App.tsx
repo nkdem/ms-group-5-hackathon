@@ -1,5 +1,7 @@
-function App() {
-  return <p className="mx-auto bg-red-300 text-red-400">Test</p>;
+import Book from "./Book";
+
+export default function App() {
+  return <Book />;
 }
 
-export default App;
+
