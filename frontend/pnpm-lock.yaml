@@ -20,6 +20,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-fast-marquee:
+    specifier: ^1.6.1
+    version: 1.6.1(react-dom@18.2.0)(react@18.2.0)
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -308,6 +311,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1833,6 +1837,16 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-fast-marquee@1.6.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-SFY+FQectFXsuCrcJuIxrh34YzJ+TKH0Lp6BqZaalVhjdmu6Sx11rKKGQiC6vvC/q9ySXYVn9sozoOvPXFSMoQ==}
+    peerDependencies:
+      react: '>= 16.8.0 || 18.0.0'
+      react-dom: '>= 16.8.0 || 18.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-refresh@0.14.0:
