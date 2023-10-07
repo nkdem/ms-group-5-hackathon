@@ -20,7 +20,7 @@ export default function StorySelector() {
       <h3 className="flex justify-center text-xl">Or choose a random one!</h3>
 
       <button
-        className="rounded-lg bg-yellow-300 py-4"
+        className="rounded-lg bg-accent2-300 py-4"
         onClick={() => goToStory(undefined)}
       >
         Random!
