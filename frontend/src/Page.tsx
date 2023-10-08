@@ -9,9 +9,6 @@ export default function Page({
   pageNumber: number;
   className: string;
 }) {
-  const frontRef = useRef<HTMLButtonElement>(null);
-  const backRef = useRef<HTMLButtonElement>(null);
-
   const { currentPage } = useBook();
 
   const flipped = currentPage > pageNumber;
@@ -22,7 +19,6 @@ export default function Page({
       <motion.div
         className={`flip " absolute right-0 aspect-[1/1.4] h-full rounded-xl ${className} page-${pageNumber}-back`}
         id={`page-${pageNumber}-back`}
-        ref={backRef}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
         transition={{
