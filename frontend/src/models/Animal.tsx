@@ -1,33 +1,45 @@
-type Animal = {
+export const hats = ["fcrown", "scotcap", "tophat"] as const;
+export type Hats = (typeof hats)[number];
+
+export type Animal = {
   name: string; // name of the animal
-  pngUrl: string; // url to the png image
+  pngName: string;
   soundUrl: string; // url to the sound file
-  hatUrl: string; // url to the hat image
+  hatName: Hats | null;
   color: string; // color of the animal
 };
 
-const Coo: Animal = {
+export function getAnimalUrl(animal: Animal) {
+  return `/${animal.pngName}.png`;
+}
+
+export function getAnimalUrlWithHat(animal: Animal) {
+  if (animal.hatName === null) {
+    return getAnimalUrl(animal);
+  }
+  return `/${animal.pngName}+${animal.hatName}.png`;
+}
+
+export const Coo: Animal = {
   name: "Coo",
-  pngUrl: "/coo.png",
+  pngName: "coo",
   color: "no_colour",
-  hatUrl: "some_url",
+  hatName: null,
   soundUrl: "some_url",
 };
 
-const Nessie: Animal = {
+export const Nessie: Animal = {
   name: "Nessie",
-  pngUrl: "/Nessie.png",
+  pngName: "Nessie",
   color: "no_colour",
-  hatUrl: "some_url",
+  hatName: null,
   soundUrl: "some_url",
 };
 
-const Unicorn: Animal = {
+export const Unicorn: Animal = {
   name: "Unicorn",
   color: "no_colour",
-  pngUrl: "/Unicorn.png",
-  hatUrl: "some_url",
+  pngName: "Unicorn",
+  hatName: null,
   soundUrl: "some_url",
 };
-
-export { Coo, Nessie, Unicorn };

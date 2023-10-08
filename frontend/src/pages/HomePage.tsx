@@ -2,7 +2,7 @@ import React from "react";
 import { usePageContext } from "../context/PageContext";
 import Marquee from "react-fast-marquee";
 import ShadowDiv from "../components/ShadowDiv";
-import { Coo, Nessie, Unicorn } from "../models/Animal";
+import { Coo, Nessie, Unicorn, getAnimalUrl } from "../models/Animal";
 
 export default function HomePage() {
   const { setCurrentPage } = usePageContext();
@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <Marquee className="mx-auto" direction="right">
         {animals.map((animal) => (
-          <img src={animal.pngUrl} className="w-48" />
+          <img src={getAnimalUrl(animal)} className="w-48" />
         ))}
       </Marquee>
     </div>

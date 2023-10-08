@@ -1,6 +1,6 @@
 import ShadowDiv from "../components/ShadowDiv";
 import { usePageContext } from "../context/PageContext";
-import { Coo, Nessie, Unicorn } from "../models/Animal";
+import { Coo, Nessie, Unicorn, getAnimalUrl } from "../models/Animal";
 
 export default function CharacterSelection() {
   const animals = [Coo, Nessie, Unicorn];
@@ -20,7 +20,7 @@ export default function CharacterSelection() {
                 setCurrentPage("animalModifier");
               }}
             >
-              <img src={animal.pngUrl} className="h-full" />
+              <img src={getAnimalUrl(animal)} className="h-full" />
             </button>
           </ShadowDiv>
         ))}

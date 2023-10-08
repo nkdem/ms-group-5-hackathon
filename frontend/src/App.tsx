@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import AnimalModifier from "./pages/AnimalModifier";
 import CharacterSelection from "./pages/CharacterSelection";
 import HomePage from "./pages/HomePage";
@@ -10,8 +10,9 @@ import SoundExperience from "./pages/SoundExperience";
 import VisualExperience from "./pages/VisualExperience";
 import PlayExperience from "./pages/PlayExperience";
 import ConfirmSettings from "./pages/ConfirmSettings";
-
+import Webcam from "react-webcam";
 export function App() {
+  // webrtc reqquest camera
   return (
     <AccessibilityContextProvider>
       <PageContextProvider>
@@ -23,6 +24,13 @@ export function App() {
 
 function AppContent() {
   const { currentPage, setCurrentPage } = usePageContext();
+  const webcamRef = useRef<Webcam>(null);
+  const capture = useCallback(() => {
+    const imageSrc = webcamRef.current?.getScreenshot();
+    const img = new Image();
+    img.src = imageSrc || "";
+    document.body.appendChild(img);
+  }, [webcamRef]);
 
   const component = useMemo(() => {
     switch (currentPage) {
@@ -48,5 +56,18 @@ function AppContent() {
         return <p>Null!!!</p>;
     }
   }, [currentPage]);
-  return <>{component}</>;
+  return (
+    <div className="pt-4">
+      {component}
+      <div className="flex">
+        {/* <Webcam 
+    className="w-1/2"
+      ref={webcamRef}
+      screenshotFormat="image/jpeg"
+      videoConstraints={{facingMode: "user"}}
+    />
+    <button onClick={capture}>Capture photo</button> */}
+      </div>
+    </div>
+  );
 }

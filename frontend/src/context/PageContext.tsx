@@ -44,16 +44,23 @@ export const PageContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const nextPage = () => {
     const currentPageIndex = pages.indexOf(currentPage);
     setCurrentPage(pages[Math.min(currentPageIndex + 1, pages.length - 1)]);
-  }
+  };
 
   const previousPage = () => {
     const currentPageIndex = pages.indexOf(currentPage);
     setCurrentPage(pages[Math.max(currentPageIndex - 1, 0)]);
-  }
+  };
 
   return (
     <PageContext.Provider
-      value={{ currentPage, setCurrentPage, animal, setAnimal, nextPage, previousPage }}
+      value={{
+        currentPage,
+        setCurrentPage,
+        animal,
+        setAnimal,
+        nextPage,
+        previousPage,
+      }}
     >
       {children}
     </PageContext.Provider>

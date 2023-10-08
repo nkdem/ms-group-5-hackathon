@@ -1,9 +1,10 @@
 import React from "react";
 import { usePageContext } from "../context/PageContext";
 import ShadowDiv from "../components/ShadowDiv";
+import { getAnimalUrlWithHat, hats } from "../models/Animal";
 
 export default function AnimalModifier() {
-  const { animal, setCurrentPage } = usePageContext();
+  const { animal, setCurrentPage, setAnimal } = usePageContext();
   const Colours = [
     "bg-accent-600",
     "bg-accent2-500",
@@ -11,7 +12,6 @@ export default function AnimalModifier() {
     "bg-accent4-600",
     "bg-accent5-400",
   ];
-  const hats = ["/fcrown.png", "/scotcap.png", "/tophat.png"];
 
   if (!animal) {
     throw new Error("Animal must be set before AnimalModifier can be rendered");
@@ -31,13 +31,19 @@ export default function AnimalModifier() {
           </div>
         </ShadowDiv>
         <ShadowDiv className="w-1/3">
-          <img src={animal.pngUrl} />
+          <img src={getAnimalUrlWithHat(animal)} />
         </ShadowDiv>
         <ShadowDiv className="w-1/3">
           {/* 2 hats per row */}
           <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8">
             {hats.map((hat) => (
-              <img src={hat} className="w-1/2" />
+              <button
+                onClick={() => {
+                  setAnimal({ ...animal, hatName: hat });
+                }}
+              >
+                <img src={`${hat}.png`} className="w-1/2" />
+              </button>
             ))}
           </div>
         </ShadowDiv>
