@@ -2,11 +2,17 @@ import { useAccessibilityContext } from "../context/AccessibilityContext";
 import { usePageContext } from "../context/PageContext";
 
 export default function ConfirmSettings() {
-  const { useEyes } = useAccessibilityContext();
+  const { settings } = useAccessibilityContext();
   const { setCurrentPage } = usePageContext();
+
   return (
     <div className="mx-auto flex w-3/4 flex-col">
-      <div>useEyes: {useEyes ? "true" : "false"}</div>
+      {/* <div>useEyes: {useEyes ? "true" : "false"}</div> */}
+      {Object.keys(settings).map((key) => (
+        <div>
+          {key}: {settings[key as keyof typeof settings] ? "true" : "false"}
+        </div>
+      ))}
       <div className="flex justify-end">
         <button
           className="bg-red-500"

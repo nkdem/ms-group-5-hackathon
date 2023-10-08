@@ -28,6 +28,8 @@ function AppContent() {
     switch (currentPage) {
       case "home":
         return <HomePage />;
+      case "playExperience":
+        return <PlayExperience />;
       case "soundExperience":
         return <SoundExperience />;
       case "visualExperience":
@@ -43,7 +45,7 @@ function AppContent() {
       case "book":
         return <Book />;
       default:
-        return <p>Null</p>;
+        return <p>Null!!!</p>;
     }
   }, [currentPage]);
   return <div className="pt-4">{component}</div>;

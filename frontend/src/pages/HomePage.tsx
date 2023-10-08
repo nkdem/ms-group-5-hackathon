@@ -16,14 +16,11 @@ export default function HomePage() {
         </button>
       </ShadowDiv>
 
-      <h1 className="flex justify-center text-6xl">Name TBD</h1>
-
-      <button
-        className="mx-auto my-8 flex-1 rounded-xl border border-secondary-400 bg-secondary-200 px-24 py-24 shadow-2xl shadow-secondary-400"
-        onClick={() => setCurrentPage("characterSelection")}
-      >
-        CLICK ME
-      </button>
+      <ShadowDiv>
+        <button onClick={() => setCurrentPage("playExperience")}>
+          <h1 className="flex justify-center text-6xl">Name TBD</h1>
+        </button>
+      </ShadowDiv>
 
       <Marquee className="mx-auto" direction="right">
         <h1>Animal 1</h1>
