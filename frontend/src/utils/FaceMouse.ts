@@ -65,9 +65,9 @@ function midpoint(coordinates: number[][]): number[] {
 }
 
 function calcLooking(centre: number[], pupil: number[]): Area {
-  if (pupil[0] < centre[0] + 0.2) {
+  if (pupil[0] + 0.001 < centre[0]) {
     return "right";
-  } else if (pupil[0] > centre[0] + 0.2) {
+  } else if (pupil[0]> centre[0] +0.001) {
     return "left";
   } else {
     return "none";
