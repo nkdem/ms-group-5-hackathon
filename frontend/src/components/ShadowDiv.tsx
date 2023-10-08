@@ -7,7 +7,8 @@ export default function ShadowDiv({
   children: React.ReactNode;
   className?: string;
 }) {
+
   return (
-    <div className={twMerge("shadowdiv bg-white", className)}>{children}</div>
+    <div className={twMerge("shadowdiv rounded-xl border-[#d7c995] border-4 bg-white", className)}>{children}</div>
   );
 }

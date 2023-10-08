@@ -27,7 +27,7 @@ function AppContent() {
   const component = useMemo(() => {
     switch (currentPage) {
       case "home":
-        return <PlayExperience />;
+        return <HomePage />;
       case "soundExperience":
         return <SoundExperience />;
       case "visualExperience":
@@ -48,12 +48,6 @@ function AppContent() {
   }, [currentPage]);
   return (
     <div className="pt-4">
-      <button
-        className="mx-8 flex flex-row rounded-lg bg-white px-2 py-2 shadow-2xl shadow-primary-300"
-        onClick={() => setCurrentPage("home")}
-      >
-        <img src="/chas-logo.png" className="mx-auto w-48 rounded-full" />
-      </button>
       {component}
       {/* <PlayExperience /> */}
     </div>

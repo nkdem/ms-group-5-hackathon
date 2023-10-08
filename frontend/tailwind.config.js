@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.(js|jsx|ts|tsx)", "./index.html"],
   theme: {
     extend: {
+      fontFamily: {
+        verdana: ["Verdana", "sans-serif"],
+      },
       colors: {
         primary: {
           50: "#fcf8eb",

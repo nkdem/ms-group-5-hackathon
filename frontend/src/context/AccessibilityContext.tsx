@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type ColorBlindness =
   | "protanopia"
@@ -10,7 +10,7 @@ type ColorBlindness =
 
 type AccessibilityContextProps = {
   settings: Settings;
-  setSettings: (settings: Settings) => void;
+  setSettings: React.Dispatch<React.SetStateAction<Settings>>;
 };
 
 const AccessibilityContext = createContext<
@@ -35,7 +35,7 @@ const defaultSettings = {
   soundAdjustment: 0,
   useDarkMode: false,
   useMagnifier: false,
-  colorBlindness: "none" as ColorBlindness,
+  colorBlindness: "none",
 };
 
 type Settings = typeof defaultSettings;

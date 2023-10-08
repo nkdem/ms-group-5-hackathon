@@ -5,19 +5,15 @@ import Checkbox from "../components/Checkbox";
 
 export default function PlayExperience() {
   const {
-    useEyes,
-    setUseEyes,
-    useFingers,
-    setUseFingers,
-    useVoice,
-    setUseVoice,
+    settings: { useEyes, useFingers, useVoice },
+    setSettings,
   } = useAccessibilityContext();
 
   const { setCurrentPage } = usePageContext();
   return (
     <div className="mx-auto flex w-3/4 flex-col gap-y-4">
       <ShadowDiv className="bg-white px-4 py-4 text-center">
-        <h1 className="text-2xl">Your Play Experience</h1>
+        <h1 className="">Your Play Experience</h1>
       </ShadowDiv>
 
       <div className="mx-auto flex w-3/4 flex-col gap-y-2">
@@ -26,7 +22,14 @@ export default function PlayExperience() {
         </ShadowDiv>
 
         <div className="flex gap-x-4">
-          <Checkbox onChange={setUseEyes} checked={useEyes} />
+          <Checkbox
+            onChange={() =>
+              setSettings((prev) => {
+                return { ...prev, useEyes: !prev.useEyes };
+              })
+            }
+            checked={useEyes}
+          />
           {/* <input
             name="useEyes"
             type="checkbox"
@@ -43,9 +46,11 @@ export default function PlayExperience() {
             name="useFingers"
             type="checkbox"
             checked={useFingers}
-            onChange={() => {
-              setUseFingers((prev) => !prev);
-            }}
+            onChange={() =>
+              setSettings((prev) => {
+                return { ...prev, useFingers: !prev.useFingers };
+              })
+            }
           />
           <label htmlFor="useFingers">Use Fingers</label>
         </div>
@@ -55,9 +60,11 @@ export default function PlayExperience() {
             name="useVoice"
             type="checkbox"
             checked={useVoice}
-            onChange={() => {
-              setUseVoice((prev) => !prev);
-            }}
+            onChange={() =>
+              setSettings((prev) => {
+                return { ...prev, useVoice: !prev.useVoice };
+              })
+            }
           />
           <label htmlFor="useVoice">Use Voice</label>
         </div>
