@@ -11,6 +11,8 @@ import VisualExperience from "./pages/VisualExperience";
 import PlayExperience from "./pages/PlayExperience";
 import ConfirmSettings from "./pages/ConfirmSettings";
 import Webcam from "react-webcam";
+import { createFaceLandmarker, faceMouse, isLooking } from "./utils/FaceMouse";
+
 export function App() {
   // webrtc reqquest camera
   return (
@@ -30,6 +32,9 @@ function AppContent() {
     const img = new Image();
     img.src = imageSrc || "";
     document.body.appendChild(img);
+    createFaceLandmarker().then(() => {
+      alert(isLooking(img));
+    });
   }, [webcamRef]);
 
   const component = useMemo(() => {
@@ -60,13 +65,13 @@ function AppContent() {
     <div className="pt-4">
       {component}
       <div className="flex">
-        {/* <Webcam 
-    className="w-1/2"
-      ref={webcamRef}
-      screenshotFormat="image/jpeg"
-      videoConstraints={{facingMode: "user"}}
-    />
-    <button onClick={capture}>Capture photo</button> */}
+        <Webcam
+          className="w-1/2"
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          videoConstraints={{ facingMode: "user" }}
+        />
+        <button onClick={capture}>Capture photo</button>
       </div>
     </div>
   );
