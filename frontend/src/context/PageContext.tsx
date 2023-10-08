@@ -7,7 +7,10 @@ type Page =
   | "characterSelection"
   | "animalModifier"
   | "storySelector"
-  | "book";
+  | "book"
+  | "playExperience"
+  | "soundExperience"
+  | "visualExperience";
 type PageContextProps = {
   currentPage: Page;
   setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;

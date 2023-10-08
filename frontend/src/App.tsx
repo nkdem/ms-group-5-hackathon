@@ -5,8 +5,10 @@ import HomePage from "./pages/HomePage";
 import { PageContextProvider, usePageContext } from "./context/PageContext";
 import StorySelector from "./pages/StorySelector";
 import Book from "./pages/Book";
-import PlayExperience from "./pages/PlayExperience";
 import { AccessibilityContextProvider } from "./context/AccessibilityContext";
+import SoundExperience from "./pages/SoundExperience";
+import VisualExperience from "./pages/VisualExperience";
+import PlayExperience from "./pages/PlayExperience";
 
 export function App() {
   return (
@@ -24,7 +26,11 @@ function AppContent() {
   const component = useMemo(() => {
     switch (currentPage) {
       case "home":
-        return <HomePage />;
+        return <PlayExperience />;
+      case "soundExperience":
+          return <SoundExperience />
+      case "visualExperience":
+          return <VisualExperience />
       case "characterSelection":
         return <CharacterSelection />;
       case "animalModifier":
