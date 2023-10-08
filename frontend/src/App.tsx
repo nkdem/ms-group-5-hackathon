@@ -5,12 +5,16 @@ import HomePage from "./pages/HomePage";
 import { PageContextProvider, usePageContext } from "./context/PageContext";
 import StorySelector from "./pages/StorySelector";
 import Book from "./pages/Book";
+import PlayExperience from "./pages/PlayExperience";
+import { AccessibilityContextProvider } from "./context/AccessibilityContext";
 
 export function App() {
   return (
-    <PageContextProvider>
-      <AppContent />
-    </PageContextProvider>
+    <AccessibilityContextProvider>
+      <PageContextProvider>
+        <AppContent />
+      </PageContextProvider>
+    </AccessibilityContextProvider>
   );
 }
 
@@ -41,7 +45,8 @@ function AppContent() {
       >
         <img src="/chas-logo.png" className="mx-auto w-48 rounded-full" />
       </button>
-      {component}
+      {/* {component} */}
+      <PlayExperience />
     </div>
   );
 }
