@@ -1,7 +1,7 @@
-import React from "react";
 import { useAccessibilityContext } from "../context/AccessibilityContext";
 import { usePageContext } from "../context/PageContext";
 import ShadowDiv from "../components/ShadowDiv";
+import Checkbox from "../components/Checkbox";
 
 export default function PlayExperience() {
   const {
@@ -26,7 +26,8 @@ export default function PlayExperience() {
         </ShadowDiv>
 
         <div className="flex gap-x-4">
-          <input
+          <Checkbox onChange={setUseEyes} checked={useEyes} />
+          {/* <input
             name="useEyes"
             type="checkbox"
             checked={useEyes}
@@ -34,7 +35,7 @@ export default function PlayExperience() {
               setUseEyes((prev) => !prev);
             }}
           />
-          <label htmlFor="useEyes">Use Eyes</label>
+          <label htmlFor="useEyes">Use Eyes</label> */}
         </div>
 
         <div className="flex gap-x-4">
