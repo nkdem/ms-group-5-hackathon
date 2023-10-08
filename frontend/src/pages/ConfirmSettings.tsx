@@ -1,28 +1,39 @@
-import { useAccessibilityContext } from "../context/AccessibilityContext";
-import { usePageContext } from "../context/PageContext";
+import SettingsLayout from "../SettingsLayout";
+import ShadowDiv from "../components/ShadowDiv";
+import {
+  settingsNames,
+  useAccessibilityContext,
+} from "../context/AccessibilityContext";
 
 export default function ConfirmSettings() {
   const { settings } = useAccessibilityContext();
-  const { setCurrentPage } = usePageContext();
 
   return (
-    <div className="mx-auto flex w-3/4 flex-col">
-      {/* <div>useEyes: {useEyes ? "true" : "false"}</div> */}
-      {Object.keys(settings).map((key) => (
-        <div>
-          {key}: {settings[key as keyof typeof settings] ? "true" : "false"}
-        </div>
-      ))}
-      <div className="flex justify-end">
-        <button
-          className="bg-red-500"
-          onClick={() => {
-            setCurrentPage("characterSelection");
-          }}
-        >
-          select
-        </button>
-      </div>
-    </div>
+    <SettingsLayout title="are these settings okay?">
+      <ShadowDiv className="flex flex-col gap-5 p-5 text-2xl">
+        {Object.keys(settings).map((key) => {
+          const value = settings[key as keyof typeof settings];
+
+          if (typeof value === "boolean") {
+            return (
+              <li>
+                <span className="font-bold">
+                  {settingsNames[key as keyof typeof settings].toUpperCase()}:
+                </span>{" "}
+                {value ? "yes" : "no"}
+              </li>
+            );
+          }
+          return (
+            <li>
+              <span className="font-bold">
+                {settingsNames[key as keyof typeof settings].toUpperCase()}:
+              </span>{" "}
+              {value}
+            </li>
+          );
+        })}
+      </ShadowDiv>
+    </SettingsLayout>
   );
 }

@@ -43,6 +43,17 @@ const defaultSettings = {
 
 type Settings = typeof defaultSettings;
 
+export const settingsNames: { [key in keyof Settings]: string } = {
+  useEyes: "Use eyes",
+  useFingers: "Use fingers",
+  useVoice: "Use voice",
+  isHearingImpaired: "Need hearing assitance",
+  soundAdjustment: "Sound adjustment",
+  useDarkMode: "Use dark mode",
+  useMagnifier: "Use magnifier",
+  colorBlindness: "Color blindness",
+};
+
 function getDefaultSettings(): Settings {
   const storedSettings = localStorage.getItem("settings");
 

@@ -9,7 +9,7 @@ import {
 
 export default function VisualExperience() {
   const {
-    settings: { useDarkMode, useMagnifier },
+    settings: { useDarkMode, useMagnifier, colorBlindness },
     setSettings,
   } = useAccessibilityContext();
 
@@ -43,7 +43,7 @@ export default function VisualExperience() {
         </ShadowDiv>
       </div>
 
-      <ShadowDiv className="flex gap-x-4 text-2xl font-thin h-14 items-center">
+      <ShadowDiv className="flex h-14 items-center gap-x-4 text-2xl font-thin">
         <label htmlFor="color-blindness">
           Do you have a hard time seeing color? Is it:
         </label>
@@ -59,7 +59,9 @@ export default function VisualExperience() {
           }}
         >
           {colorBlindnessTypes.map((type) => (
-            <option value={type}>{type}</option>
+            <option selected={colorBlindness === type} value={type}>
+              {type}
+            </option>
           ))}
         </select>
       </ShadowDiv>

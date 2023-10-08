@@ -12,7 +12,7 @@ export default function SettingsLayout({
 }) {
   const { nextPage, previousPage } = usePageContext();
   return (
-    <div className="mx-auto flex h-full w-full flex-col gap-4 py-10 px-20">
+    <div className="mx-auto flex h-full w-full flex-col gap-4 px-20 py-10">
       <ShadowDiv className="bg-white px-4 py-4 text-center">
         <h1>{title}</h1>
       </ShadowDiv>

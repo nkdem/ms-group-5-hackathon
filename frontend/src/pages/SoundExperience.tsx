@@ -5,7 +5,7 @@ import { useAccessibilityContext } from "../context/AccessibilityContext";
 
 export default function SoundExperience() {
   const {
-    settings: { soundAdjustment, isHearingImpaired },
+    settings: { isHearingImpaired },
     setSettings,
   } = useAccessibilityContext();
 
