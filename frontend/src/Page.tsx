@@ -12,31 +12,16 @@ export default function Page({
   const frontRef = useRef<HTMLButtonElement>(null);
   const backRef = useRef<HTMLButtonElement>(null);
 
-  const { flipForward, flipBackward, currentPage, flipCount } = useBook();
+  const { currentPage } = useBook();
 
   const flipped = currentPage > pageNumber;
-
-  const handleClick = () => {
-    const front = frontRef.current;
-    const back = backRef.current;
-    if (front === null || back === null) return;
-
-    front.style.zIndex = flipCount + "";
-    back.style.zIndex = flipCount + "";
-
-    if (flipped) {
-      flipForward();
-    } else {
-      flipBackward();
-    }
-  };
 
   return (
     <>
       {/* Back */}
-      <motion.button
-        className={`flip " absolute right-0 aspect-[1/1.4] h-full ${className}`}
-        onClick={handleClick}
+      <motion.div
+        className={`flip " absolute right-0 aspect-[1/1.4] h-full rounded-xl ${className} page-${pageNumber}-back`}
+        id={`page-${pageNumber}-back`}
         ref={backRef}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
@@ -62,13 +47,12 @@ export default function Page({
         }}
       >
         {pageNumber} (back)
-      </motion.button>
+      </motion.div>
 
       {/* Front */}
-      <motion.button
-        className={`flip " absolute right-0 aspect-[1/1.4] h-full ${className}`}
-        onClick={handleClick}
-        ref={frontRef}
+      <motion.div
+        className={`flip " absolute right-0 aspect-[1/1.4] h-full rounded-xl ${className}`}
+        id={`page-${pageNumber}-front`}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
         transition={{
@@ -91,7 +75,7 @@ export default function Page({
         }}
       >
         {pageNumber} (front)
-      </motion.button>
+      </motion.div>
     </>
   );
 }
