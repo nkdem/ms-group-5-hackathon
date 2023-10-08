@@ -45,8 +45,8 @@ function AppContent() {
       >
         <img src="/chas-logo.png" className="mx-auto w-48 rounded-full" />
       </button>
-      {/* {component} */}
-      <PlayExperience />
+      {component}
+      {/* <PlayExperience /> */}
     </div>
   );
 }

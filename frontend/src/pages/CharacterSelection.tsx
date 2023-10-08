@@ -1,3 +1,4 @@
+import ShadowDiv from "../components/ShadowDiv";
 import { usePageContext } from "../context/PageContext";
 import Animal from "../models/Animal";
 
@@ -31,17 +32,20 @@ export default function CharacterSelection() {
       <h2 className="flex justify-center text-4xl">Choose an Animal!</h2>
       <div className="flex flex-wrap justify-center gap-x-8">
         {animals.map((animal) => (
-          <button
-            key={animal.name}
-            className="flex h-48 w-3/12 flex-row rounded-lg bg-primary-100"
-            onClick={() => {
-              setAnimal(animal);
-              setCurrentPage("animalModifier");
-            }}
-          >
-            {animal.name}
-          </button>
+          <ShadowDiv className="w-3/12 h-48">
+            <button
+              key={animal.name}
+              className="flex h-full w-full flex-row rounded-lg bg-primary-100"
+              onClick={() => {
+                setAnimal(animal);
+                setCurrentPage("animalModifier");
+              }}
+            >
+              {animal.name}
+            </button>
+          </ShadowDiv>
         ))}
+        <ShadowDiv>hello world</ShadowDiv>
       </div>
     </div>
   );
