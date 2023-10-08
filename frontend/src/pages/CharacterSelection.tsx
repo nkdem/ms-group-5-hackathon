@@ -32,7 +32,7 @@ export default function CharacterSelection() {
       <h2 className="flex justify-center text-4xl">Choose an Animal!</h2>
       <div className="flex flex-wrap justify-center gap-x-8">
         {animals.map((animal) => (
-          <ShadowDiv className="w-3/12 h-48">
+          <ShadowDiv className="h-48 w-3/12">
             <button
               key={animal.name}
               className="flex h-full w-full flex-row rounded-lg bg-primary-100"
