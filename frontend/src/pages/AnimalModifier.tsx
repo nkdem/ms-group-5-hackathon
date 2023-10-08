@@ -11,7 +11,7 @@ export default function AnimalModifier() {
     "bg-accent4-600",
     "bg-accent5-400",
   ];
-  const hats = ["hat1", "hat2", "hat3", "hat4"];
+  const hats = ["/fcrown.png", "/scotcap.png", "/tophat.png"];
 
   if (!animal) {
     throw new Error("Animal must be set before AnimalModifier can be rendered");
@@ -30,12 +30,14 @@ export default function AnimalModifier() {
             ))}
           </div>
         </ShadowDiv>
-        <ShadowDiv className="w-1/3">Animal Image</ShadowDiv>
+        <ShadowDiv className="w-1/3">
+          <img src={animal.pngUrl} />
+        </ShadowDiv>
         <ShadowDiv className="w-1/3">
           {/* 2 hats per row */}
           <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8">
             {hats.map((hat) => (
-              <div className={`h-16 w-16 rounded-full bg-blue-400`} />
+              <img src={hat} className="w-1/2" />
             ))}
           </div>
         </ShadowDiv>

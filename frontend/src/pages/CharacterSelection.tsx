@@ -4,6 +4,7 @@ import Animal from "../models/Animal";
 
 const Coo: Animal = {
   name: "Coo",
+  pngUrl: "/coo.png",
   color: "no_colour",
   hatUrl: "some_url",
   soundUrl: "some_url",
@@ -11,6 +12,7 @@ const Coo: Animal = {
 
 const Nessie: Animal = {
   name: "Nessie",
+  pngUrl: "/Nessie.png",
   color: "no_colour",
   hatUrl: "some_url",
   soundUrl: "some_url",
@@ -19,6 +21,7 @@ const Nessie: Animal = {
 const Unicorn: Animal = {
   name: "Unicorn",
   color: "no_colour",
+  pngUrl: "/Unicorn.png",
   hatUrl: "some_url",
   soundUrl: "some_url",
 };
@@ -41,7 +44,7 @@ export default function CharacterSelection() {
                 setCurrentPage("animalModifier");
               }}
             >
-              {animal.name}
+              <img src={animal.pngUrl} className="h-full" />
             </button>
           </ShadowDiv>
         ))}

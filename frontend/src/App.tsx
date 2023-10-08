@@ -46,10 +46,5 @@ function AppContent() {
         return <p>Null</p>;
     }
   }, [currentPage]);
-  return (
-    <div className="pt-4">
-      {component}
-      {/* <PlayExperience /> */}
-    </div>
-  );
+  return <div className="pt-4">{component}</div>;
 }
