@@ -12,7 +12,7 @@ export default function Checkbox({ checked, onChange }: Props) {
     <button onClick={onChange}>
       <ShadowDiv
         className={twMerge(
-          "h-16 w-16 rounded-2xl transition-all",
+          "h-14 w-14 rounded-2xl transition-all",
           checked ? "bg-secondary-600" : "bg-white",
         )}
       >

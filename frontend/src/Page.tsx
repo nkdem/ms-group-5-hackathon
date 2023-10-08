@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useBook } from "./context/BookContext";
 
 export default function Page({
@@ -57,6 +57,7 @@ export default function Page({
             translateX: "-100%",
             rotateY: 0,
             transformOrigin: "right",
+            backfaceVisibility: "hidden",
           },
         }}
       >
@@ -79,6 +80,7 @@ export default function Page({
             transformPerspective: "1800px",
             rotateY: 0,
             transformOrigin: "left",
+            backfaceVisibility: "hidden",
           },
           flipped: {
             transformPerspective: "1800px",

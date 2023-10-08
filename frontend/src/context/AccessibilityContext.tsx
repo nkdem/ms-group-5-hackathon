@@ -1,12 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-type ColorBlindness =
-  | "protanopia"
-  | "deuteranopia"
-  | "tritanopia"
-  | "achromatopsia"
-  | "invertColors"
-  | "none";
+export const colorBlindnessTypes = [
+  "none",
+  "protanopia",
+  "deuteranopia",
+  "tritanopia",
+  "achromatopsia",
+  "invertColors",
+] as const;
+
+export type ColorBlindness = (typeof colorBlindnessTypes)[number];
 
 type AccessibilityContextProps = {
   settings: Settings;
@@ -35,7 +38,7 @@ const defaultSettings = {
   soundAdjustment: 0,
   useDarkMode: false,
   useMagnifier: false,
-  colorBlindness: "none",
+  colorBlindness: "none" as ColorBlindness,
 };
 
 type Settings = typeof defaultSettings;
