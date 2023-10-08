@@ -45,7 +45,6 @@ export default function CharacterSelection() {
             </button>
           </ShadowDiv>
         ))}
-        <ShadowDiv>hello world</ShadowDiv>
       </div>
     </div>
   );

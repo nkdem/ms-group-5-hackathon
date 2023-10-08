@@ -10,7 +10,8 @@ type Page =
   | "book"
   | "playExperience"
   | "soundExperience"
-  | "visualExperience";
+  | "visualExperience"
+  | "confirmSettings";
 type PageContextProps = {
   currentPage: Page;
   setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;

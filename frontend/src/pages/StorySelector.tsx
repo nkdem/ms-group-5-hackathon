@@ -1,5 +1,6 @@
 import React from "react";
 import { usePageContext } from "../context/PageContext";
+import ShadowDiv from "../components/ShadowDiv";
 
 export default function StorySelector() {
   const stories = [0, 1, 2];
@@ -19,12 +20,9 @@ export default function StorySelector() {
       </h2>
       <h3 className="flex justify-center text-xl">Or choose a random one!</h3>
 
-      <button
-        className="rounded-lg bg-accent2-300 py-4"
-        onClick={() => goToStory(undefined)}
-      >
-        Random!
-      </button>
+      <ShadowDiv>
+        <button onClick={() => goToStory(undefined)}>Random!</button>
+      </ShadowDiv>
 
       <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8">
         {stories.map((story) => (

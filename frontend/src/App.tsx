@@ -9,6 +9,7 @@ import { AccessibilityContextProvider } from "./context/AccessibilityContext";
 import SoundExperience from "./pages/SoundExperience";
 import VisualExperience from "./pages/VisualExperience";
 import PlayExperience from "./pages/PlayExperience";
+import ConfirmSettings from "./pages/ConfirmSettings";
 
 export function App() {
   return (
@@ -28,9 +29,11 @@ function AppContent() {
       case "home":
         return <PlayExperience />;
       case "soundExperience":
-          return <SoundExperience />
+        return <SoundExperience />;
       case "visualExperience":
-          return <VisualExperience />
+        return <VisualExperience />;
+      case "confirmSettings":
+        return <ConfirmSettings />;
       case "characterSelection":
         return <CharacterSelection />;
       case "animalModifier":

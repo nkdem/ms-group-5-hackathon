@@ -8,8 +8,6 @@ export default function ShadowDiv({
   className?: string;
 }) {
   return (
-    <div className={twMerge("shadowdiv bg-primary-100", className)}>
-      {children}
-    </div>
+    <div className={twMerge("shadowdiv bg-white", className)}>{children}</div>
   );
 }

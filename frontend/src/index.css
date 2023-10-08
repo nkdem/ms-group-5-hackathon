@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .shadowdiv {
-    box-shadow: 5px 5px 0px 0px #d7c995;
-    border-radius: 10px;
-    border: 5px solid #d7c995;
+  box-shadow: 5px 5px 0px 0px #d7c995;
+  border-radius: 10px;
+  border: 5px solid #d7c995;
 }
