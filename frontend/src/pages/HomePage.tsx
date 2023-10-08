@@ -2,29 +2,32 @@ import React from "react";
 import { usePageContext } from "../context/PageContext";
 import Marquee from "react-fast-marquee";
 import ShadowDiv from "../components/ShadowDiv";
+import { Coo, Nessie, Unicorn } from "../models/Animal";
 
 export default function HomePage() {
   const { setCurrentPage } = usePageContext();
+  const animals = [Coo, Nessie, Unicorn];
   return (
-    <div className="flex flex-col justify-around">
+    <div className="flex flex-col justify-around gap-y-8">
       <ShadowDiv className="w-fit">
         <button
-          className="mx-8 flex flex-row rounded-lg bg-white px-2 py-2 shadow-2xl shadow-primary-300"
+          className="rounded-full bg-white px-2 py-2"
           onClick={() => setCurrentPage("home")}
         >
           <img src="/chas-logo.png" className="mx-auto w-48 rounded-full" />
         </button>
       </ShadowDiv>
 
-      <ShadowDiv>
+      <ShadowDiv className="flex justify-center py-6">
         <button onClick={() => setCurrentPage("playExperience")}>
-          <h1 className="flex justify-center text-6xl">Name TBD</h1>
+          <h1>Name TBD</h1>
         </button>
       </ShadowDiv>
 
       <Marquee className="mx-auto" direction="right">
-        <h1>Animal 1</h1>
-        <h1>Animal 3</h1>
+        {animals.map((animal) => (
+          <img src={animal.pngUrl} className="w-48" />
+        ))}
       </Marquee>
     </div>
   );

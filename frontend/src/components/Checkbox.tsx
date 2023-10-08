@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import ShadowDiv from "./ShadowDiv";
 import { twMerge } from "tailwind-merge";
-import { CheckIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import { CheckIcon } from "@heroicons/react/20/solid";
 
 type Props = {
   checked: boolean;
