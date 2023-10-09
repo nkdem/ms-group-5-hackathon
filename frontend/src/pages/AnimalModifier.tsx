@@ -74,7 +74,7 @@ export default function AnimalModifier() {
       </div>
 
       <button
-        className="mx-auto rounded-lg bg-accent2-300 px-12 py-12 dark:bg-accent2-600"
+        className="mx-auto rounded-xl bg-accent2-300 px-12 py-12 dark:bg-accent2-600 text-2xl"
         onClick={() => {
           setCurrentPage("storySelector");
         }}

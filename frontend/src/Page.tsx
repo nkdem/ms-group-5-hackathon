@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { useBook } from "./context/BookContext";
 
 export default function Page({
   pageNumber,
   className,
+  front,
+  back,
 }: {
   pageNumber: number;
   className: string;
+  front: string;
+  back: string;
 }) {
   const { currentPage } = useBook();
 
@@ -17,7 +20,7 @@ export default function Page({
     <>
       {/* Back */}
       <motion.div
-        className={`flip " absolute right-0 aspect-[1/1.4] h-full rounded-xl ${className} page-${pageNumber}-back`}
+        className={`flip absolute right-0 aspect-[1.4/1] h-full rounded-xl ${className} page-${pageNumber}-back bg-[url('/${back}')]`}
         id={`page-${pageNumber}-back`}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
@@ -42,12 +45,11 @@ export default function Page({
           },
         }}
       >
-        {pageNumber} (back)
       </motion.div>
 
       {/* Front */}
       <motion.div
-        className={`flip " absolute right-0 aspect-[1/1.4] h-full rounded-xl ${className}`}
+        className={`flip " absolute right-0 aspect-[1.4/1] h-full rounded-xl ${className} bg-[url('/${front}')]`}
         id={`page-${pageNumber}-front`}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
@@ -70,7 +72,6 @@ export default function Page({
           },
         }}
       >
-        {pageNumber} (front)
       </motion.div>
     </>
   );

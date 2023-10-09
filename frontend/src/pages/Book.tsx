@@ -8,6 +8,7 @@ import Button from "../Button";
 import { usePageContext } from "../context/PageContext";
 import { getAnimalUrlWithHat } from "../models/Animal";
 import { useAccessibilityContext } from "../context/AccessibilityContext";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 
 const POLLING_INTERVAL = 200;
 const FLIP_THRESHOLD = 3000;
@@ -68,34 +69,45 @@ export default function Book() {
 
   return (
     <>
-      <div className="flex flex-col gap-y-4 py-8">
-        <div className="flex h-full w-full items-center justify-center">
-          <div className="relative aspect-[1/0.7] h-[60vh] shadow-primary-300">
-            <Page pageNumber={4} className={`bg-red-300`} />
-            <Page pageNumber={3} className={`bg-red-300`} />
-            <Page pageNumber={2} className={`bg-blue-300`} />
-            <Page pageNumber={1} className={`bg-green-300`} />
-            <Page pageNumber={0} className={`bg-yellow-300`} />
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <img
-            src={getAnimalUrlWithHat(animal)}
-            className="absolute bottom-0 right-[370px] h-64 w-64"
+      <div className="flex flex-col items-center justify-center gap-y-4 py-8">
+        <div className="relative aspect-[1.4/1] w-[45%] translate-x-[50%] shadow-primary-300">
+          <Page
+            pageNumber={2}
+            className={`bg-red-300 bg-cover`}
+            front="PG4.png"
+            back="PG5.png"
+          />
+          <Page
+            pageNumber={1}
+            className={`bg-red-300 bg-cover`}
+            front="PG2.png"
+            back="PG3.png"
+          />
+          <Page
+            pageNumber={0}
+            className={`bg-red-300 bg-cover`}
+            front="PG.png"
+            back="PG1.png"
           />
         </div>
+
+        <img
+          src={getAnimalUrlWithHat(animal)}
+          className="absolute bottom-0 left-[50%] h-64 w-64 translate-x-[-50%]"
+        />
+
         <div className="absolute bottom-0 flex w-full justify-between gap-5 text-5xl text-white">
           <Button className="p-5 uppercase" onClick={flipBackward}>
-            previous page
+            <ArrowLeftIcon className="h-10 w-10" />
           </Button>
           <Button className="p-5 uppercase" onClick={flipForward}>
-            next page
+            <ArrowRightIcon className="h-10 w-10" />
           </Button>
         </div>
 
         {useEyes && (
           <Webcam
-            className="absolute top-0 h-[480px] w-[640px] opacity-0"
+            className="absolute left-0 top-0 h-[10rem] opacity-0"
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={{ facingMode: "user" }}
