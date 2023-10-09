@@ -1,7 +1,6 @@
-import React from "react";
-import { usePageContext } from "../context/PageContext";
 import Marquee from "react-fast-marquee";
 import ShadowDiv from "../components/ShadowDiv";
+import { usePageContext } from "../context/PageContext";
 import { Coo, Nessie, Unicorn, getAnimalUrl } from "../models/Animal";
 
 export default function HomePage() {

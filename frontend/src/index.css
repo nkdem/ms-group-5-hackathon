@@ -5,6 +5,9 @@
 .shadowdiv {
   box-shadow: 5px 5px 0px 0px #d7c995;
 }
+.dark .shadowdiv {
+  box-shadow: 5px 5px 0px 0px #5b5236;
+}
 
 h1 {
   @apply text-4xl;

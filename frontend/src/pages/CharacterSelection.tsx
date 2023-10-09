@@ -16,8 +16,16 @@ export default function CharacterSelection() {
               key={animal.name}
               className="flex h-full w-full flex-row rounded-lg bg-primary-100"
               onClick={() => {
-                setAnimal(animal);
-                setCurrentPage("animalModifier");
+                // play audio
+                const audio = new Audio(animal.soundUrl);
+                audio.play();
+                // delay
+                setTimeout(() => {
+                  // set animal
+                  setAnimal(animal);
+                  // go to next page
+                  setCurrentPage("animalModifier");
+                }, animal.duration!);
               }}
             >
               <div className="flex justify-center">

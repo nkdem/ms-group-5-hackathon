@@ -49,6 +49,7 @@ export default function VisualExperience() {
         </label>
         <select
           id="color-blindness"
+          className="dark:bg-[#5b5236]"
           onChange={(e) => {
             setSettings((prev) => {
               return {

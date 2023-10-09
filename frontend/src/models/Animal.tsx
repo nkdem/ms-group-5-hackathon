@@ -5,6 +5,7 @@ export type Animal = {
   name: string; // name of the animal
   pngName: string;
   soundUrl: string; // url to the sound file
+  duration?: number; // duration of the sound file
   hatName: Hats | null;
   color: string; // color of the animal
 };
@@ -25,7 +26,8 @@ export const Coo: Animal = {
   pngName: "coo",
   color: "no_colour",
   hatName: null,
-  soundUrl: "some_url",
+  soundUrl: "mooing-cow.mp3",
+  duration: 2000,
 };
 
 export const Nessie: Animal = {
@@ -33,7 +35,8 @@ export const Nessie: Animal = {
   pngName: "Nessie",
   color: "no_colour",
   hatName: null,
-  soundUrl: "some_url",
+  soundUrl: "splash.mp3",
+  duration: 3000,
 };
 
 export const Unicorn: Animal = {
@@ -41,5 +44,6 @@ export const Unicorn: Animal = {
   color: "no_colour",
   pngName: "Unicorn",
   hatName: null,
-  soundUrl: "some_url",
+  soundUrl: "horse-gallop.mp3",
+  duration: 2000,
 };
