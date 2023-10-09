@@ -52,7 +52,7 @@ export default function PlayExperience() {
           checked={useVoice}
         />
         <ShadowDiv className="flex h-full flex-grow items-center rounded-2xl pl-5 text-2xl font-thin">
-          Your eyes
+          Your voice
         </ShadowDiv>
       </div>
     </SettingsLayout>

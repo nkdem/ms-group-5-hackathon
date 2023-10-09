@@ -4,6 +4,7 @@ import ShadowDiv from "../components/ShadowDiv";
 import { getAnimalUrlWithHat, hats } from "../models/Animal";
 import { twMerge } from "tailwind-merge";
 import SettingsLayout from "../SettingsLayout";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 export default function AnimalModifier() {
   const { animal, setCurrentPage, setAnimal } = usePageContext();
@@ -74,19 +75,35 @@ export default function AnimalModifier() {
         </ShadowDiv>
         <ShadowDiv className="flex flex-row flex-wrap justify-evenly gap-x-8">
           {/* 2 hats per row */}
-          {hats.map((hat) => (
-            <button
-              key={hat}
-              className="flex justify-center"
-              onClick={() => {
-                setAnimal({ ...animal, hatName: hat });
-              }}
-            >
-              <img src={`${hat}.png`} className="w-1/2" />
-            </button>
-          ))}
+          {hats.map((hat) => {
+            if (hat == "none") {
+              return (
+                <button
+                  key={hat}
+                  className="flex h-20 w-20 justify-center"
+                  onClick={() => {
+                    setAnimal({ ...animal, hatName: hat });
+                  }}
+                >
+                  <XMarkIcon className="block" />
+                </button>
+              );
+            }
+            return (
+              <button
+                key={hat}
+                className="flex justify-center"
+                onClick={() => {
+                  setAnimal({ ...animal, hatName: hat });
+                }}
+              >
+                <img src={`${hat}.png`} className="w-1/2" />
+              </button>
+            );
+          })}
         </ShadowDiv>
       </div>
+
       <button
         className="mx-auto rounded-xl bg-accent2-300 p-7 text-2xl dark:bg-accent2-600"
         onClick={() => {

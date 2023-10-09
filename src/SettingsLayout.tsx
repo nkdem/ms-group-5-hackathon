@@ -6,9 +6,13 @@ import { usePageContext } from "./context/PageContext";
 export default function SettingsLayout({
   title,
   children,
+  nextCustom,
+  previousCustom,
 }: {
   title: string;
   children: React.ReactNode;
+  nextCustom?: () => void;
+  previousCustom?: () => void;
 }) {
   const { nextPage, previousPage } = usePageContext();
   return (
@@ -22,10 +26,16 @@ export default function SettingsLayout({
       <div className="mt-auto">
         <hr className="my-3 h-[3px] rounded-full bg-[#d7c995]" />
         <div className="mt-auto flex items-end justify-between">
-          <Button className="h-fit w-fit" onClick={previousPage}>
+          <Button
+            className="h-fit w-fit"
+            onClick={previousCustom ? previousCustom : previousPage}
+          >
             <ArrowLeftIcon className="h-16 w-20 text-white" />
           </Button>
-          <Button className="h-fit w-fit" onClick={nextPage}>
+          <Button
+            className="h-fit w-fit"
+            onClick={nextCustom ? nextCustom : nextPage}
+          >
             <ArrowRightIcon className="h-16 w-20 text-white" />
           </Button>
         </div>

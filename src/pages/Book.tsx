@@ -94,7 +94,7 @@ export default function Book() {
             front="book-front.png"
             back="PG1.png"
             frontContent={null}
-            backContent={`On a cold, frosty mroning, ${animal.name} the ${animal.type} woke up and wanted to go out`}
+            backContent={`On a cold, frosty morning, ${animal.name} the ${animal.type} woke up and wanted to go out`}
           />
         </div>
 
