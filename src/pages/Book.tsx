@@ -91,7 +91,7 @@ export default function Book() {
           <Page
             pageNumber={0}
             className={`bg-neutral-300 bg-cover`}
-            front="PG.png"
+            front="book-front.png"
             back="PG1.png"
             frontContent={null}
             backContent={`On a cold, frosty mroning, ${animal.name} the ${animal.type} woke up and wanted to go out`}
