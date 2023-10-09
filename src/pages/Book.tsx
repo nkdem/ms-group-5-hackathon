@@ -11,7 +11,7 @@ import { useAccessibilityContext } from "../context/AccessibilityContext";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 
 const POLLING_INTERVAL = 200;
-const FLIP_THRESHOLD = 3000;
+const FLIP_THRESHOLD = 1500;
 const POLLING_THRESHOLD = FLIP_THRESHOLD / POLLING_INTERVAL;
 
 let areaBuffer: Area[] = [];
@@ -114,7 +114,7 @@ export default function Book() {
 
         {useEyes && (
           <Webcam
-            className="absolute left-0 top-0 h-[10rem] opacity-0"
+            className="absolute left-0 top-0 h-[10rem] opacity-100"
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={{ facingMode: "user" }}

@@ -17,9 +17,9 @@ export default function HomePage() {
       </ShadowDiv>
 
       <div className="flex flex-col items-center gap-10 flex-grow">
-        <ShadowDiv className="mx-auto flex w-[50%] justify-center p-5 py-6">
+        <ShadowDiv className="mx-auto flex w-fit justify-center p-5 py-6">
           <button onClick={() => setCurrentPage("playExperience")}>
-            <h1> Nessie, the Coo and the Unicorn</h1>
+            <h1> WEE WONDERS</h1>
           </button>
         </ShadowDiv>
 
