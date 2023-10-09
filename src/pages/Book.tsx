@@ -76,18 +76,25 @@ export default function Book() {
             className={`bg-neutral-300 bg-cover`}
             front="PG4.png"
             back="PG5.png"
+            backContent={`${animal.name} then saw the third crow on the fence. It kept trying to squawk`}
+            frontContent={`${animal.name} saw the second crow was just a baby. It was looking for its mum.`}
+            // backContent={`On a cold, frosty mroning, ${animal.name} the ${animal.name} woke up and wanted to go out`}
           />
           <Page
             pageNumber={1}
             className={`bg-neutral-300 bg-cover`}
             front="PG2.png"
             back="PG3.png"
+            frontContent={`${animal.name} walked across the field to see three crows sat upon a fence.`}
+            backContent={`${animal.name} went to the first crow. The crow was sad it had a broken wing.`}
           />
           <Page
             pageNumber={0}
             className={`bg-neutral-300 bg-cover`}
             front="PG.png"
             back="PG1.png"
+            frontContent={null}
+            backContent={`On a cold, frosty mroning, ${animal.name} the ${animal.type} woke up and wanted to go out`}
           />
         </div>
 

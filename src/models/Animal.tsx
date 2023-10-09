@@ -2,6 +2,7 @@ export const hats = ["fcrown", "scotcap", "tophat"] as const;
 export type Hats = (typeof hats)[number];
 
 export type Animal = {
+  type: string;
   name: string;
   pngName: string;
   soundUrl: string;
@@ -22,7 +23,8 @@ export function getAnimalUrlWithHat(animal: Animal) {
 }
 
 export const Coo: Animal = {
-  name: "Coo",
+  type: "coo",
+  name: "",
   pngName: "coo",
   color: "no_colour",
   hatName: null,
@@ -31,7 +33,8 @@ export const Coo: Animal = {
 };
 
 export const Nessie: Animal = {
-  name: "Nessie",
+  type: "nessie",
+  name: "",
   pngName: "Nessie",
   color: "no_colour",
   hatName: null,
@@ -40,7 +43,8 @@ export const Nessie: Animal = {
 };
 
 export const Unicorn: Animal = {
-  name: "Unicorn",
+  type: "unicorn",
+  name: "",
   color: "no_colour",
   pngName: "Unicorn",
   hatName: null,
