@@ -2,10 +2,10 @@ export const hats = ["fcrown", "scotcap", "tophat"] as const;
 export type Hats = (typeof hats)[number];
 
 export type Animal = {
-  name: string; // name of the animal
+  name: string;
   pngName: string;
-  soundUrl: string; // url to the sound file
-  duration?: number; // duration of the sound file
+  soundUrl: string;
+  duration?: number;
   hatName: Hats | null;
   color: string; // color of the animal
 };

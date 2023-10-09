@@ -17,7 +17,7 @@ export default function HomePage() {
         </button>
       </ShadowDiv>
 
-      <ShadowDiv className="flex justify-center py-6">
+      <ShadowDiv className="flex justify-center py-6 w-[50%] mx-auto p-5 mb-20">
         <button onClick={() => setCurrentPage("playExperience")}>
           <h1> Nessie, the Coo and the Unicorn</h1>
         </button>
@@ -25,7 +25,7 @@ export default function HomePage() {
 
       <Marquee className="mx-auto" direction="right">
         {animals.map((animal) => (
-          <img src={getAnimalUrl(animal)} className="w-48" />
+          <img src={getAnimalUrl(animal)} className="w-56" />
         ))}
       </Marquee>
     </div>
