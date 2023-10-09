@@ -11,3 +11,7 @@ h1 {
   @apply uppercase;
   @apply font-bold;
 }
+
+.dark {
+  color: #ece7d1;
+}

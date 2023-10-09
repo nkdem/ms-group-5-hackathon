@@ -20,7 +20,9 @@ export default function CharacterSelection() {
                 setCurrentPage("animalModifier");
               }}
             >
-              <img src={getAnimalUrl(animal)} className="h-full" />
+              <div className="flex justify-center">
+                <img src={getAnimalUrl(animal)} className="h-full" />
+              </div>
             </button>
           </ShadowDiv>
         ))}

@@ -20,7 +20,7 @@ export default function HomePage() {
 
       <ShadowDiv className="flex justify-center py-6">
         <button onClick={() => setCurrentPage("playExperience")}>
-          <h1>Name TBD</h1>
+          <h1> Nessie, the Coo and the Unicorn</h1>
         </button>
       </ShadowDiv>
 

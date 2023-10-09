@@ -69,6 +69,10 @@ export const AccessibilityContextProvider: React.FC<{
 
   useEffect(() => {
     localStorage.setItem("settings", JSON.stringify(settings));
+    const theme = settings.useDarkMode ? "dark" : "light";
+    const root = window.document.documentElement;
+    root.classList.remove("dark", "light");
+    root.classList.add(theme);
   });
 
   return (

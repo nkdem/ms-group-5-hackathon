@@ -10,7 +10,7 @@ export default function ShadowDiv({
   return (
     <div
       className={twMerge(
-        "shadowdiv rounded-xl border-4 border-[#d7c995] bg-white",
+        "shadowdiv rounded-xl border-4 border-[#d7c995] bg-white dark:border-[#5b5236] dark:bg-[#4a463c]",
         className,
       )}
     >
