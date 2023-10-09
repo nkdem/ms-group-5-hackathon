@@ -46,14 +46,16 @@ export default function AnimalModifier() {
           </div>
         </ShadowDiv>
         <ShadowDiv className="flex w-1/3 items-center justify-center">
-          <div
-            className={twMerge(
-              "mx-4 my-4 h-80 w-80 transform rounded-full duration-500 ease-in-out",
-              selectedColour,
-            )}
-          >
-            {/* clip */}
-            <img src={getAnimalUrlWithHat(animal)} />
+          <div>
+            <div
+              className={twMerge(
+                "mx-auto my-4 flex h-60 w-60 transform flex-col justify-center rounded-full duration-500 ease-in-out",
+                selectedColour,
+              )}
+            >
+              {/* clip */}
+              <img src={getAnimalUrlWithHat(animal)} />
+            </div>
             <div className="mt-4 flex justify-center">
               <input
                 className="w-3/4 rounded-lg bg-slate-100 p-4 text-xl placeholder:text-inherit placeholder:opacity-40 dark:bg-[#625c4e]"
