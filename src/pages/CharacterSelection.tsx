@@ -1,3 +1,4 @@
+import SettingsLayout from "../SettingsLayout";
 import ShadowDiv from "../components/ShadowDiv";
 import { usePageContext } from "../context/PageContext";
 import { Coo, Nessie, Unicorn, getAnimalUrl } from "../models/Animal";
@@ -7,14 +8,13 @@ export default function CharacterSelection() {
   const { setAnimal, setCurrentPage } = usePageContext();
 
   return (
-    <div className="mx-4 mt-4 flex flex-col gap-y-8">
-      <h2 className="flex justify-center text-4xl">Choose an Animal!</h2>
+    <SettingsLayout title="choose an animal!">
       <div className="flex flex-wrap justify-center gap-x-8">
         {animals.map((animal) => (
-          <ShadowDiv key={animal.type} className="h-fit w-3/12">
+          <ShadowDiv key={animal.type} className="h-fit w-[30%]">
             <button
               key={animal.name}
-              className="flex h-full w-full flex-row rounded-lg bg-primary-100"
+              className="flex h-full w-full flex-col items-center gap-5 rounded-lg bg-primary-100 p-5"
               onClick={() => {
                 // play audio
                 const audio = new Audio(animal.soundUrl);
@@ -31,10 +31,12 @@ export default function CharacterSelection() {
               <div className="flex justify-center">
                 <img src={getAnimalUrl(animal)} className="h-full" />
               </div>
+
+              <h1 className="">{animal.type}</h1>
             </button>
           </ShadowDiv>
         ))}
       </div>
-    </div>
+    </SettingsLayout>
   );
 }
