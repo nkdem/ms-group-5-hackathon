@@ -40,6 +40,14 @@ export default function SoundExperience() {
           placeholder="50"
           className="slider w-[80%]"
           id="audio-slider"
+          onChange={e => {
+            setSettings(prev => {
+              return {
+                ...prev,
+                soundAdjustment: parseInt(e.target.value),
+              };
+            });
+          }}
         />
         <div className="bg-black h-[5px] w-[80%] rounded-full relative">
           <div className="h-10 w-[5px] bg-black absolute left-[50%] translate-y-[-50%] rounded-full">
