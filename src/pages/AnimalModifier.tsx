@@ -29,10 +29,9 @@ export default function AnimalModifier() {
           Select a colour and hat
         </h3>
       </ShadowDiv>
-      <div className="mx-8 flex flex-row justify-between gap-3 [&>*]:w-1/3">
+      <div className="flex flex-row justify-between gap-3 [&>*]:w-1/3">
         <ShadowDiv className="flex flex-col items-center justify-center gap-8 p-3">
           {/* 2 circles per row */}
-          {/* <div className="rounded-full h-16 w-16 bg-blue-400"/> */}
           <h1 className="text-center">Color</h1>
           <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8 gap-y-4">
             {Colours.map((colour) => (
@@ -54,7 +53,7 @@ export default function AnimalModifier() {
           <div>
             <div
               className={twMerge(
-                "mx-auto my-4 flex h-60 w-60 transform flex-col justify-center rounded-full duration-500 ease-in-out",
+                "mx-auto my-4 flex aspect-square w-52 transform flex-col justify-center rounded-full duration-500 ease-in-out",
                 selectedColour,
               )}
             >
@@ -73,34 +72,37 @@ export default function AnimalModifier() {
             </div>
           </div>
         </ShadowDiv>
-        <ShadowDiv className="flex flex-row flex-wrap justify-evenly gap-x-8">
-          {/* 2 hats per row */}
-          {hats.map((hat) => {
-            if (hat == "none") {
+        {/* <ShadowDiv className="flex flex-row flex-wrap justify-evenly gap-x-8"> */}
+        <ShadowDiv className="flex justify-center items-center">
+          <div className="grid grid-cols-2 grid-rows-2 [&>*]:aspect-square [&>*]:p-2">
+            {/* 2 hats per row */}
+            {hats.map((hat) => {
+              if (hat == "none") {
+                return (
+                  <button
+                    key={hat}
+                    className="flex justify-center"
+                    onClick={() => {
+                      setAnimal({ ...animal, hatName: hat });
+                    }}
+                  >
+                    <XMarkIcon className="object-cover" />
+                  </button>
+                );
+              }
               return (
                 <button
                   key={hat}
-                  className="flex h-20 w-20 justify-center"
+                  className="flex justify-center"
                   onClick={() => {
                     setAnimal({ ...animal, hatName: hat });
                   }}
                 >
-                  <XMarkIcon className="block" />
+                  <img src={`${hat}.png`} className="object-cover" />
                 </button>
               );
-            }
-            return (
-              <button
-                key={hat}
-                className="flex justify-center"
-                onClick={() => {
-                  setAnimal({ ...animal, hatName: hat });
-                }}
-              >
-                <img src={`${hat}.png`} className="w-1/2" />
-              </button>
-            );
-          })}
+            })}
+          </div>
         </ShadowDiv>
       </div>
 

@@ -29,7 +29,7 @@ export default function VisualExperience() {
         </ShadowDiv>
       </div>
 
-      <div className="flex h-14 items-center gap-x-4">
+      <div className="flex h-20 items-center gap-x-4">
         <Checkbox
           onChange={() =>
             setSettings((prev) => {

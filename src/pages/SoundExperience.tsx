@@ -28,7 +28,7 @@ export default function SoundExperience() {
         </ShadowDiv>
       </div>
 
-      <ShadowDiv className="flex flex-col items-center gap-5 py-5 text-2xl font-thin">
+      <ShadowDiv className="flex flex-col items-center gap-5 px-5 py-10 text-2xl font-thin">
         <label htmlFor="audio-slider">
           Adjust the sound between your left and right ears by sliding the green
           circle
@@ -38,7 +38,7 @@ export default function SoundExperience() {
           min="0"
           max="100"
           placeholder="50"
-          className="slider w-[80%]"
+          className="slider w-[80%] accent-secondary-500"
           id="audio-slider"
           onChange={(e) => {
             setSettings((prev) => {
