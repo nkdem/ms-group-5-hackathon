@@ -60,7 +60,7 @@ export default function VisualExperience() {
           }}
         >
           {colorBlindnessTypes.map((type) => (
-            <option selected={colorBlindness === type} value={type}>
+            <option key={type} selected={colorBlindness === type} value={type}>
               {type}
             </option>
           ))}

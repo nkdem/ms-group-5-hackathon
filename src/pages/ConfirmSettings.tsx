@@ -10,13 +10,13 @@ export default function ConfirmSettings() {
 
   return (
     <SettingsLayout title="are these settings okay?">
-      <ShadowDiv className="flex flex-col gap-5 p-5 text-2xl">
+      <ShadowDiv className="flex flex-col gap-5 p-8 text-2xl">
         {Object.keys(settings).map((key) => {
           const value = settings[key as keyof typeof settings];
 
           if (typeof value === "boolean") {
             return (
-              <li>
+              <li key={key}>
                 <span className="font-bold">
                   {settingsNames[key as keyof typeof settings].toUpperCase()}:
                 </span>{" "}
@@ -25,7 +25,7 @@ export default function ConfirmSettings() {
             );
           }
           return (
-            <li>
+            <li key={key}>
               <span className="font-bold">
                 {settingsNames[key as keyof typeof settings].toUpperCase()}:
               </span>{" "}

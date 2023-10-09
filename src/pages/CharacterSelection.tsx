@@ -11,7 +11,7 @@ export default function CharacterSelection() {
       <h2 className="flex justify-center text-4xl">Choose an Animal!</h2>
       <div className="flex flex-wrap justify-center gap-x-8">
         {animals.map((animal) => (
-          <ShadowDiv className="h-fit w-3/12">
+          <ShadowDiv key={animal.type} className="h-fit w-3/12">
             <button
               key={animal.name}
               className="flex h-full w-full flex-row rounded-lg bg-primary-100"

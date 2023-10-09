@@ -25,7 +25,7 @@ export default function HomePage() {
 
       <Marquee className="mx-auto" direction="right">
         {animals.map((animal) => (
-          <img src={getAnimalUrl(animal)} className="w-56" />
+          <img key={animal.type} src={getAnimalUrl(animal)} className="w-56" />
         ))}
       </Marquee>
     </div>

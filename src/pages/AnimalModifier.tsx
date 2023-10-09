@@ -33,6 +33,7 @@ export default function AnimalModifier() {
           <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8 gap-y-4">
             {Colours.map((colour) => (
               <div
+              key={colour}
                 className={twMerge(
                   `h-16 w-16 rounded-full ${colour} transform border-2 border-black duration-500 ease-in-out`,
                   selectedColour === colour ? "scale-125" : "scale-100",
@@ -73,6 +74,7 @@ export default function AnimalModifier() {
           <div className="mx-8 flex flex-row flex-wrap justify-evenly gap-x-8">
             {hats.map((hat) => (
               <button
+              key={hat}
                 className="flex justify-center"
                 onClick={() => {
                   setAnimal({ ...animal, hatName: hat });
