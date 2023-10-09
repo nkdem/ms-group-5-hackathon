@@ -73,19 +73,19 @@ export default function Book() {
         <div className="relative aspect-[1.4/1] w-[45%] translate-x-[50%] shadow-primary-300">
           <Page
             pageNumber={2}
-            className={`bg-red-300 bg-cover`}
+            className={`bg-neutral-300 bg-cover`}
             front="PG4.png"
             back="PG5.png"
           />
           <Page
             pageNumber={1}
-            className={`bg-red-300 bg-cover`}
+            className={`bg-neutral-300 bg-cover`}
             front="PG2.png"
             back="PG3.png"
           />
           <Page
             pageNumber={0}
-            className={`bg-red-300 bg-cover`}
+            className={`bg-neutral-300 bg-cover`}
             front="PG.png"
             back="PG1.png"
           />
@@ -93,10 +93,10 @@ export default function Book() {
 
         <img
           src={getAnimalUrlWithHat(animal)}
-          className="absolute bottom-0 left-[50%] h-64 w-64 translate-x-[-50%]"
+          className="absolute bottom-0 left-[50%] h-64 translate-x-[-50%]"
         />
 
-        <div className="absolute bottom-0 flex w-full justify-between gap-5 text-5xl text-white">
+        <div className="absolute bottom-0 flex w-full justify-between gap-5 text-5xl text-white p-5">
           <Button className="p-5 uppercase" onClick={flipBackward}>
             <ArrowLeftIcon className="h-10 w-10" />
           </Button>

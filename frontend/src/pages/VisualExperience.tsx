@@ -43,7 +43,7 @@ export default function VisualExperience() {
         </ShadowDiv>
       </div>
 
-      <ShadowDiv className="flex h-14 items-center gap-x-4 text-2xl font-thin">
+      <ShadowDiv className="flex h-14 items-center gap-x-4 text-2xl font-thin p-5">
         <label htmlFor="color-blindness">
           Do you have a hard time seeing color? Is it:
         </label>

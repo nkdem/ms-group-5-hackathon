@@ -21,6 +21,9 @@ export default function Page({
       {/* Back */}
       <motion.div
         className={`flip absolute right-0 aspect-[1.4/1] h-full rounded-xl ${className} page-${pageNumber}-back bg-[url('/${back}')]`}
+        style={{
+          backgroundImage: `url(/${back})`,
+        }}
         id={`page-${pageNumber}-back`}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
@@ -53,6 +56,9 @@ export default function Page({
         id={`page-${pageNumber}-front`}
         animate={flipped ? "flipped" : "not_flipped"}
         initial={false} // Prevent animation on load
+        style={{
+          backgroundImage: `url(/${front})`,
+        }}
         transition={{
           bounce: 0,
           duration: 0.8,

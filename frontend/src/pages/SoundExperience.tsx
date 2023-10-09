@@ -28,7 +28,7 @@ export default function SoundExperience() {
         </ShadowDiv>
       </div>
 
-      <ShadowDiv className="text-2xl font-thin">
+      <ShadowDiv className="text-2xl font-thin flex flex-col gap-5 items-center py-5">
         <label htmlFor="audio-slider">
           Adjust the sound between your left and right ears by sliding the green
           circle
@@ -38,9 +38,17 @@ export default function SoundExperience() {
           min="0"
           max="100"
           placeholder="50"
-          className="slider"
+          className="slider w-[80%]"
           id="audio-slider"
         />
+        <div className="bg-black h-[5px] w-[80%] rounded-full relative">
+          <div className="h-10 w-[5px] bg-black absolute left-[50%] translate-y-[-50%] rounded-full">
+          </div>
+          <div className="h-10 w-[5px] bg-black absolute left-[0] translate-y-[-50%] rounded-full">
+          </div>
+          <div className="h-10 w-[5px] bg-black absolute left-[100%] translate-y-[-50%] rounded-full">
+          </div>
+        </div>
       </ShadowDiv>
     </SettingsLayout>
   );

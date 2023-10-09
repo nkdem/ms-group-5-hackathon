@@ -45,7 +45,7 @@ export default function AnimalModifier() {
             ))}
           </div>
         </ShadowDiv>
-        <ShadowDiv className="flex w-1/3 justify-center">
+        <ShadowDiv className="flex w-1/3 justify-center items-center">
           <div
             className={twMerge(
               "mx-4 my-4 h-80 w-80 transform rounded-full duration-500 ease-in-out",
