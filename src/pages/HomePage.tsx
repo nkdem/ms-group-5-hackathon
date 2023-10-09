@@ -17,7 +17,7 @@ export default function HomePage() {
         </button>
       </ShadowDiv>
 
-      <ShadowDiv className="flex justify-center py-6 w-[50%] mx-auto p-5 mb-20">
+      <ShadowDiv className="mx-auto mb-20 flex w-[50%] justify-center p-5 py-6">
         <button onClick={() => setCurrentPage("playExperience")}>
           <h1> Nessie, the Coo and the Unicorn</h1>
         </button>

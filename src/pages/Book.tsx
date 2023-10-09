@@ -96,7 +96,7 @@ export default function Book() {
           className="absolute bottom-0 left-[50%] h-64 translate-x-[-50%]"
         />
 
-        <div className="absolute bottom-0 flex w-full justify-between gap-5 text-5xl text-white p-5">
+        <div className="absolute bottom-0 flex w-full justify-between gap-5 p-5 text-5xl text-white">
           <Button className="p-5 uppercase" onClick={flipBackward}>
             <ArrowLeftIcon className="h-10 w-10" />
           </Button>
