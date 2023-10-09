@@ -28,7 +28,7 @@ export default function SoundExperience() {
         </ShadowDiv>
       </div>
 
-      <ShadowDiv className="text-2xl font-thin flex flex-col gap-5 items-center py-5">
+      <ShadowDiv className="flex flex-col items-center gap-5 py-5 text-2xl font-thin">
         <label htmlFor="audio-slider">
           Adjust the sound between your left and right ears by sliding the green
           circle
@@ -40,8 +40,8 @@ export default function SoundExperience() {
           placeholder="50"
           className="slider w-[80%]"
           id="audio-slider"
-          onChange={e => {
-            setSettings(prev => {
+          onChange={(e) => {
+            setSettings((prev) => {
               return {
                 ...prev,
                 soundAdjustment: parseInt(e.target.value),
@@ -49,13 +49,10 @@ export default function SoundExperience() {
             });
           }}
         />
-        <div className="bg-black h-[5px] w-[80%] rounded-full relative">
-          <div className="h-10 w-[5px] bg-black absolute left-[50%] translate-y-[-50%] rounded-full">
-          </div>
-          <div className="h-10 w-[5px] bg-black absolute left-[0] translate-y-[-50%] rounded-full">
-          </div>
-          <div className="h-10 w-[5px] bg-black absolute left-[100%] translate-y-[-50%] rounded-full">
-          </div>
+        <div className="relative h-[5px] w-[80%] rounded-full bg-black">
+          <div className="absolute left-[50%] h-10 w-[5px] translate-y-[-50%] rounded-full bg-black"></div>
+          <div className="absolute left-[0] h-10 w-[5px] translate-y-[-50%] rounded-full bg-black"></div>
+          <div className="absolute left-[100%] h-10 w-[5px] translate-y-[-50%] rounded-full bg-black"></div>
         </div>
       </ShadowDiv>
     </SettingsLayout>

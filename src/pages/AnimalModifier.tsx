@@ -45,7 +45,7 @@ export default function AnimalModifier() {
             ))}
           </div>
         </ShadowDiv>
-        <ShadowDiv className="flex w-1/3 justify-center items-center">
+        <ShadowDiv className="flex w-1/3 items-center justify-center">
           <div
             className={twMerge(
               "mx-4 my-4 h-80 w-80 transform rounded-full duration-500 ease-in-out",
@@ -74,7 +74,7 @@ export default function AnimalModifier() {
       </div>
 
       <button
-        className="mx-auto rounded-xl bg-accent2-300 px-12 py-12 dark:bg-accent2-600 text-2xl"
+        className="mx-auto rounded-xl bg-accent2-300 px-12 py-12 text-2xl dark:bg-accent2-600"
         onClick={() => {
           setCurrentPage("storySelector");
         }}

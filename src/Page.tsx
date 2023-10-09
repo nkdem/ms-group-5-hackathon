@@ -47,8 +47,7 @@ export default function Page({
             backfaceVisibility: "hidden",
           },
         }}
-      >
-      </motion.div>
+      ></motion.div>
 
       {/* Front */}
       <motion.div
@@ -77,8 +76,7 @@ export default function Page({
             backfaceVisibility: "hidden",
           },
         }}
-      >
-      </motion.div>
+      ></motion.div>
     </>
   );
 }
