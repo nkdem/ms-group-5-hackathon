@@ -22,11 +22,11 @@ export default function AnimalModifier() {
     throw new Error("Animal must be set before AnimalModifier can be rendered");
   }
   return (
-    <div className="mt-4 flex h-full flex-col gap-y-2">
+    <div className="mt-4 flex h-full flex-col gap-y-4">
       <h2 className="flex justify-center text-4xl">Make your animal yours!</h2>
       <h3 className="flex justify-center text-xl">Select a colour and hat</h3>
       <div className="mx-8 flex flex-row justify-evenly gap-x-8">
-        <ShadowDiv className="flex w-1/3 flex-col gap-y-8 overflow-auto">
+        <ShadowDiv className="flex w-1/3 flex-col gap-y-8">
           {/* 2 circles per row */}
           {/* <div className="rounded-full h-16 w-16 bg-blue-400"/> */}
           <h1 className="text-center">Color</h1>
@@ -54,6 +54,16 @@ export default function AnimalModifier() {
           >
             {/* clip */}
             <img src={getAnimalUrlWithHat(animal)} />
+            <div className="mt-4 flex justify-center">
+              <input
+                className="w-3/4 rounded-lg bg-slate-100 p-4 text-xl placeholder:text-inherit placeholder:opacity-40 dark:bg-[#625c4e]"
+                placeholder="Name"
+                value={animal.name}
+                onChange={(e) => {
+                  setAnimal({ ...animal, name: e.target.value });
+                }}
+              />
+            </div>
           </div>
         </ShadowDiv>
         <ShadowDiv className="w-1/3">
@@ -72,6 +82,20 @@ export default function AnimalModifier() {
           </div>
         </ShadowDiv>
       </div>
+
+      {/* character name */}
+      {/* <div className="flex justify-center">
+        <ShadowDiv className="flex w-1/3 flex-col gap-y-8 px-4 py-4">
+          <h1 className="text-center">Name</h1>
+          <input
+            className="rounded-lg border-2 border-black bg-inherit"
+            value={animal.name}
+            onChange={(e) => {
+              setAnimal({ ...animal, name: e.target.value });
+            }}
+          />
+        </ShadowDiv>
+        </div> */}
 
       <button
         className="mx-auto rounded-xl bg-accent2-300 px-12 py-12 text-2xl dark:bg-accent2-600"

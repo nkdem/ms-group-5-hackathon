@@ -1,20 +1,27 @@
 import { motion } from "framer-motion";
 import { useBook } from "./context/BookContext";
+import { usePageContext } from "./context/PageContext";
 
 export default function Page({
   pageNumber,
   className,
   front,
   back,
+  backContent,
+  frontContent,
 }: {
   pageNumber: number;
   className: string;
   front: string;
   back: string;
+  backContent: string | null;
+  frontContent: string | null;
 }) {
   const { currentPage } = useBook();
 
   const flipped = currentPage > pageNumber;
+
+  const { animal } = usePageContext();
 
   return (
     <>
@@ -47,7 +54,12 @@ export default function Page({
             backfaceVisibility: "hidden",
           },
         }}
-      ></motion.div>
+      >
+        <div className="absolute bottom-0 rounded-b-lg bg-white px-2 text-xs font-bold uppercase text-[#322903]">
+          <p>{backContent}</p>
+          {/* <p>{`{animal.name} walked across the field to see three crows sat upon a fence.`}</p> */}
+        </div>
+      </motion.div>
 
       {/* Front */}
       <motion.div
@@ -76,7 +88,13 @@ export default function Page({
             backfaceVisibility: "hidden",
           },
         }}
-      ></motion.div>
+      >
+        <div className="absolute bottom-0 rounded-b-lg bg-white px-2 text-xs font-bold uppercase text-[#322903]">
+          {/* <p>{`On a cold, frosty mroning, ${animal.name} the ${animal.name} woke up and wanted to go out`}</p> */}
+          {/* <p>{`${animal.name} walked across the field to see three crows sat upon a fence.`}</p> */}
+          <p>{frontContent}</p>
+        </div>
+      </motion.div>
     </>
   );
 }
